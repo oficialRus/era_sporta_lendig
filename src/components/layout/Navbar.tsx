@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
@@ -23,11 +23,13 @@ export const Navbar = () => {
     { name: 'Тренеры', href: '#trainers' },
     { name: 'Цены', href: '#pricing' },
   ];
+  const telegramMessage = encodeURIComponent(
+    'Здравствуйте. Интересует посещение  в ваш Фитнес Клуб. Расскажите, пожалуйста, подробнее.'
+  );
+  const telegramUrl = `https://t.me/+79180855258?text=${telegramMessage}`;
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-900/95 backdrop-blur-sm py-4 shadow-lg' : 'bg-transparent py-6'}`}
-    >
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-900/95 backdrop-blur-sm py-4 shadow-lg' : 'bg-transparent py-6'}`}>
       <Container>
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -38,19 +40,21 @@ export const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
+              <a 
+                key={link.name} 
                 href={link.href}
                 className="text-sm font-bold uppercase tracking-wider text-zinc-300 hover:text-red-600 transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <Button size="sm">Вступить</Button>
+            <Button size="sm" href={telegramUrl} target="_blank" rel="noreferrer">
+              Вступить
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <button 
             className="md:hidden text-white hover:text-red-600 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -63,8 +67,8 @@ export const Navbar = () => {
           <div className="md:hidden absolute top-full left-0 w-full bg-zinc-900 border-t border-zinc-800 py-4 shadow-xl">
             <div className="flex flex-col gap-4 px-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
+                <a 
+                  key={link.name} 
                   href={link.href}
                   className="text-base font-bold uppercase tracking-wider text-zinc-300 hover:text-red-600 transition-colors"
                   onClick={() => setIsOpen(false)}
@@ -72,7 +76,9 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button className="w-full">Вступить</Button>
+              <Button className="w-full" href={telegramUrl} target="_blank" rel="noreferrer">
+                Вступить
+              </Button>
             </div>
           </div>
         )}
@@ -80,4 +86,3 @@ export const Navbar = () => {
     </nav>
   );
 };
-

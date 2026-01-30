@@ -4,6 +4,11 @@ import { Button } from '../ui/Button';
 import heroBg from '../../assets/images/hero-bg.png';
 
 export const Hero = () => {
+  const telegramMessage = encodeURIComponent(
+    'Здравствуйте. Интересует посещение  в ваш Фитнес Клуб. Расскажите, пожалуйста, подробнее.'
+  );
+  const telegramUrl = `https://t.me/+79180855258?text=${telegramMessage}`;
+
   return (
     <section id="hero" className="relative h-screen min-h-[600px] flex items-center">
       {/* Background Image with Overlay */}
@@ -28,7 +33,9 @@ export const Hero = () => {
             Премиальный фитнес-клуб с профессиональным оборудованием, лучшими тренерами и атмосферой, которая мотивирует на победы.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg">Начать тренировки</Button>
+            <Button size="lg" href={telegramUrl} target="_blank" rel="noreferrer">
+              Начать тренировки
+            </Button>
             <Button variant="outline" size="lg">Узнать больше</Button>
           </div>
         </div>

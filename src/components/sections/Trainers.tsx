@@ -1,33 +1,65 @@
 import React from 'react';
 import { Container } from '../ui/Container';
 import { Section } from '../ui/Section';
-import { Instagram, Twitter } from 'lucide-react';
-import trainerFemale from '../../assets/images/trainer-female.png';
-import trainerMale from '../../assets/images/trainer-male.png';
+import trainerFemale from '../../assets/images/trainer-oksana.png';
+import trainerMale from '../../assets/images/trainer-antonina.png';
+import trainerTatyana from '../../assets/images/trainer-tatyana.png';
+import trainerOlesya from '../../assets/images/trainer-olesya.png';
+import trainerAlexander from '../../assets/images/trainer-alexander.png';
+import trainerRoman from '../../assets/images/trainer-roman.png';
+import trainerAnastasia from '../../assets/images/trainer-anastasia.png';
+import trainerRamazan from '../../assets/images/trainer-ramazan.png';
 
 const trainers = [
   {
-    name: "Анна Волкова",
-    role: "Йога & Стретчинг",
+    name: "Максимова Оксана",
+    role: "Персональный тренер по настольному теннису",
     image: trainerFemale,
-    description: "Сертифицированный инструктор с 7-летним стажем. Поможет обрести гармонию."
+    description: "Тренер групповых направлений: ОФП, аквааэробика (утро), настольный теннис"
   },
   {
-    name: "Дмитрий Соколов",
-    role: "Бодибилдинг & Силовые",
+    name: "Клистова Антонина",
+    role: "Персональный тренер в тренажерном зале",
     image: trainerMale,
-    description: "Мастер спорта по бодибилдингу. Специализируется на наборе мышечной массы.",
-    isMale: true
+    description:
+      "Тренер групповых направлений: йога, здоровая спина, худеем вместе. Тренер подростковой группы «level-up»"
   },
   {
-    name: "Елена Морозова",
-    role: "CrossFit & Кардио",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Fallback/Placeholder for variety if needed, but I'll reuse female image or find another if strictly local. Let's reuse female for now or just have 2 trainers to match images found.
-    // Actually I only downloaded 2 trainer images. I will stick to 2 featured trainers centered or 3 with a placeholder.
-    // I'll use a placeholder from Unsplash for the 3rd one to make the grid look good, or just 2.
-    // Let's go with 2 for now to be safe with local assets.
-    description: "Эксперт по функциональному тренингу. Заставит вас попотеть.",
-    hidden: true
+    name: "Иванова Татьяна",
+    role: "Персональный тренер в тренажерном зале",
+    image: trainerTatyana,
+    description: "Персональный тренер в тренажерном зале"
+  },
+  {
+    name: "Чуманова Олеся",
+    role: "Персональный тренер по плаванию",
+    image: trainerOlesya,
+    description: "Тренер детской секции по плаванию"
+  },
+  {
+    name: "Деревщук Александр",
+    role: "Персональный тренер в тренажерном зале",
+    image: trainerAlexander,
+    description:
+      "Тренер групповых направлений: фитнес-интенсив, аквааэробика (вечер). Тренер подростковой группы «Level-up»"
+  },
+  {
+    name: "Федоренко Роман",
+    role: "Персональный тренер по плаванию",
+    image: trainerRoman,
+    description: "Тренер детской секции по плаванию"
+  },
+  {
+    name: "Брандт Анастасия",
+    role: "Тренер групповых направлений: стретчинг, шейпинг",
+    image: trainerAnastasia,
+    description: "Тренер групповых направлений: стретчинг, шейпинг"
+  },
+  {
+    name: "Залимханов Рамазан",
+    role: "Тренер смешанных единоборств (ММА)",
+    image: trainerRamazan,
+    description: "Тренер смешанных единоборств (ММА)"
   }
 ];
 
@@ -55,15 +87,11 @@ export const Trainers = () => {
                 />
               </div>
               <div className="p-8 text-center relative">
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider">
+                <div className="absolute -top-6 left-0 right-0 mx-auto w-fit bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider text-center whitespace-normal max-w-[90%] leading-snug">
                   {trainer.role}
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2 mt-2">{trainer.name}</h3>
                 <p className="text-zinc-400 mb-6">{trainer.description}</p>
-                <div className="flex justify-center gap-4">
-                  <a href="#" className="text-zinc-500 hover:text-red-600 transition-colors"><Instagram size={20} /></a>
-                  <a href="#" className="text-zinc-500 hover:text-red-600 transition-colors"><Twitter size={20} /></a>
-                </div>
               </div>
             </div>
           ))}

@@ -1,6 +1,3 @@
 {
-  "name": "ERA Sporta",
-  "version": "1.0.0",
-  "entry": "index.html"
+    "project_type": "react"
 }
-
