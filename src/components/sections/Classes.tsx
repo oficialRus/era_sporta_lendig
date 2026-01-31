@@ -5,32 +5,42 @@ import { Button } from '../ui/Button';
 import yogaImg from '../../assets/images/yoga-class.png';
 import boxingImg from '../../assets/images/boxing-class.png';
 import crossfitImg from '../../assets/images/crossfit-class.png';
-import poolTennisImg from '../../assets/images/pool-table-tennis.png';
+import poolSwimmerImg from '../../assets/images/pool-swimmer.jpg';
+import tableTennisImg from '../../assets/images/table-tennis.jpg';
+
+const buildTelegramUrl = (message: string) =>
+  `https://t.me/+79180855258?text=${encodeURIComponent(message)}`;
 
 const classes = [
   {
     title: "Йога & Пилатес",
     image: yogaImg,
     description: "Восстановите баланс тела и разума. Улучшите гибкость и снимите стресс.",
-    time: "Пн, Ср, Пт • 09:00"
+    time: "Ежедневно • 08:00 - 21:30"
   },
   {
     title: "Бокс & MMA",
     image: boxingImg,
     description: "Интенсивные тренировки для развития силы, скорости и выносливости.",
-    time: "Вт, Чт • 19:00"
+    time: "Ежедневно • 08:00 - 21:30"
   },
   {
-    title: "CrossFit",
+    title: "Кроссфит",
     image: crossfitImg,
     description: "Функциональный тренинг высокой интенсивности для максимальных результатов.",
-    time: "Ежедневно • 18:00"
+    time: "Ежедневно • 08:00 - 21:30"
   },
   {
-    title: "Бассейн и Настольный тенис",
-    image: poolTennisImg,
-    description: "Расслабьтесь в бассейне и зарядитесь энергией за партией в теннис.",
-    time: "Ежедневно • 08:00 - 22:00"
+    title: "Настольный теннис",
+    image: tableTennisImg,
+    description: "Динамичные игры для развития реакции, координации и отличного настроения.",
+    time: "Ежедневно • 08:00 - 21:30"
+  },
+  {
+    title: "Басейн",
+    image: poolSwimmerImg,
+    description: "Спокойные заплывы для восстановления и легкой кардио-нагрузки в чистом и комфортном басейне.",
+    time: "Ежедневно • 08:00 - 21:30"
   }
 ];
 
@@ -46,7 +56,11 @@ export const Classes = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {classes.map((item, index) => (
+          {classes.map((item, index) => {
+            const telegramUrl = buildTelegramUrl(
+              `Здравствуйте. Меня заинтересовала секция «${item.title}» в вашем спортзале. Расскажите, пожалуйста, подробнее.`
+            );
+            return (
             <div key={index} className="group relative overflow-hidden rounded-2xl h-[400px]">
               <img
                 src={item.image}
@@ -60,13 +74,21 @@ export const Classes = () => {
                 <p className="text-zinc-300 mb-4 text-sm">{item.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-red-600 font-bold text-sm">{item.time}</span>
-                  <Button size="sm" variant="outline" className="border-white text-white hover:bg-white hover:text-black hover:border-white">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-black hover:border-white"
+                    href={telegramUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Записаться
                   </Button>
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </Section>

@@ -19,7 +19,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Главная', href: '#hero' },
     { name: 'О нас', href: '#features' },
-    { name: 'Классы', href: '#classes' },
+    { name: 'Секции', href: '#classes' },
     { name: 'Тренеры', href: '#trainers' },
     { name: 'Цены', href: '#pricing' },
   ];

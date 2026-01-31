@@ -6,8 +6,16 @@ import { Section } from '../ui/Section';
 const features = [
   {
     icon: <Clock className="w-10 h-10 text-red-600" />,
-    title: "Работаем с 08:00",
-    description: "7 дней в неделю."
+    title: "С 08:00",
+    description: (
+      <>
+        Режим работы:
+        <br />
+        Пн–Пт — 08:00–21:45
+        <br />
+        Сб–Вс — 09:00–19:45
+      </>
+    )
   },
   {
     icon: <Users className="w-10 h-10 text-red-600" />,
