@@ -25,7 +25,7 @@ const features = [
   },
   {
     icon: <Zap className="w-10 h-10 text-red-600" />,
-    title: "Top Оборудование",
+    title: "Премиальное Оборудование",
     description: "Современные тренажеры от ведущих мировых брендов."
   },
   {

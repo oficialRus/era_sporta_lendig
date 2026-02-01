@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="bg-black min-h-screen text-white font-sans selection:bg-red-600 selection:text-white">
       <Navbar />
-      <main>
+      <main className="pt-24">
         <Hero />
         <Features />
         <Classes />
